@@ -1,0 +1,29 @@
+/* This will let us overide some of the css styliing from the original css file. */
+
+/* Accent color variable- only need to change this to change the other colors */
+:root {
+    --accent-color: #C0392B;
+}
+
+/* Active and hovered navbar links */
+#mainNav.navbar-shrink .nav-link.active,
+#mainNav.navbar-shrink .nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* Active navbar underline */
+#mainNav.navbar-shrink .nav-link.active {
+    border-bottom-color: var(--accent-color);
+}
+
+/* Another accent section */
+/* Not sure if this'll end up being used since we're probably going to replace the project section, but just in case.. */
+.projects-section .featured-text {
+    border-left-color: var(--accent-color);
+}
+
+/* Menu button */
+#mainNav .navbar-toggler {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
