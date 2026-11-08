@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<!--
+  This chart was created with Chart Maker by amCharts
+  https://live.amcharts.com
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>chart5 rent assistance</title>
+  <style>
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; background: #ffffff; }
+    #chartdiv { width: 100%; height: 100vh; }
+  </style>
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/plugins/json.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/plugins/exporting.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+</head>
+<body>
+  <div id="chartdiv"></div>
+  <script>
+    am5.ready(function () {
+      var root = am5.Root.new("chartdiv");
+      window.chartRoot = root;
+
+      root.setThemes([
+        am5themes_Animated.new(root)
+      ]);
+
+      var config = {
+        "type": "XYChart",
+        "settings": {
+          "paddingTop": 20,
+          "paddingBottom": 25,
+          "paddingRight": 25,
+          "panX": false,
+          "panY": false,
+          "wheelX": "none",
+          "wheelY": "none",
+          "layout": {
+            "type": "VerticalLayout"
+          },
+          "width": {
+            "type": "Percent",
+            "value": 100
+          },
+          "height": {
+            "type": "Percent",
+            "value": 100
+          }
+        },
+        "properties": {
+          "series": [
+            "#series-0",
+            "#series-1",
+            "#series-2"
+          ],
+          "xAxes": [
+            "#axis-0"
+          ],
+          "yAxes": [
+            "#axis-1"
+          ]
+        },
+        "children": [
+          {
+            "type": "Label",
+            "settings": {
+              "text": "About 1 in 5 rent-stabilized households already get help paying rent",
+              "fontSize": 20,
+              "fontWeight": "600",
+              "x": {
+                "type": "Percent",
+                "value": 50
+              },
+              "centerX": {
+                "type": "Percent",
+                "value": 50
+              },
+              "paddingBottom": 4
+            },
+            "index": 0
+          },
+          {
+            "type": "Label",
+            "settings": {
+              "text": "Share of rent-stabilized households by type of rental assistance, NYC 2023",
+              "fontSize": 14,
+              "fill": {
+                "type": "Color",
+                "value": "#555555"
+              },
+              "x": {
+                "type": "Percent",
+                "value": 50
+              },
+              "centerX": {
+                "type": "Percent",
+                "value": 50
+              },
+              "paddingBottom": 6
+            },
+            "index": 1
+          },
+          {
+            "type": "Legend",
+            "settings": {
+              "centerX": {
+                "type": "Percent",
+                "value": 50
+              },
+              "x": {
+                "type": "Percent",
+                "value": 50
+              },
+              "marginBottom": 10
+            },
+            "properties": {
+              "data": [
+                "#series-0",
+                "#series-1",
+                "#series-2"
+              ]
+            },
+            "index": 2
+          },
+          {
+            "type": "Label",
+            "settings": {
+              "text": "Source: Analysis of the 2023 NYC Housing and Vacancy Survey (weighted). Margins of error about ±1 percentage point.\n\"Other rental assistance\" = Shelter Allowance, CityFHEPS, SCRIE, DRIE or another program that pays part of the rent, without a Section 8 voucher.",
+              "fontSize": 11,
+              "fill": {
+                "type": "Color",
+                "value": "#666666"
+              },
+              "paddingTop": 10
+            }
+          }
+        ],
+        "refs": [
+          {
+            "data-0": [
+              {
+                "group": "Rent-stabilized households",
+                "voucher": 11.0,
+                "other": 9.4,
+                "none": 79.6
+              }
+            ]
+          },
+          {
+            "axis-0": {
+              "type": "ValueAxis",
+              "settings": {
+                "min": 0,
+                "max": 100,
+                "strictMinMax": true,
+                "numberFormat": "0'%'",
+                "renderer": {
+                  "type": "AxisRendererX",
+                  "settings": {
+                    "minGridDistance": 120
+                  }
+                }
+              }
+            }
+          },
+          {
+            "axis-1": {
+              "type": "CategoryAxis",
+              "settings": {
+                "categoryField": "group",
+                "renderer": {
+                  "type": "AxisRendererY",
+                  "settings": {
+                    "cellStartLocation": 0.1,
+                    "cellEndLocation": 0.9
+                  }
+                }
+              },
+              "properties": {
+                "data": "#data-0"
+              }
+            }
+          },
+          {
+            "series-0": {
+              "type": "ColumnSeries",
+              "settings": {
+                "name": "Section 8 / Housing Choice Voucher",
+                "xAxis": "#axis-0",
+                "yAxis": "#axis-1",
+                "valueXField": "voucher",
+                "categoryYField": "group",
+                "stacked": true,
+                "fill": {
+                  "type": "Color",
+                  "value": "#c0392b"
+                },
+                "stroke": {
+                  "type": "Color",
+                  "value": "#ffffff"
+                },
+                "tooltip": {
+                  "type": "Tooltip",
+                  "settings": {
+                    "labelText": "{name}: {valueX.formatNumber('0.0')}%"
+                  }
+                }
+              },
+              "properties": {
+                "data": "#data-0",
+                "columns": {
+                  "properties": {
+                    "template": {
+                      "settings": {
+                        "height": {
+                          "type": "Percent",
+                          "value": 80
+                        },
+                        "strokeWidth": 2,
+                        "tooltipText": "{name}: {valueX.formatNumber('0.0')}%"
+                      }
+                    }
+                  }
+                },
+                "bullets": [
+                  {
+                    "type": "Bullet",
+                    "settings": {
+                      "locationX": 0.5,
+                      "sprite": {
+                        "type": "Label",
+                        "settings": {
+                          "text": "{valueX.formatNumber('0.0')}%",
+                          "populateText": true,
+                          "fontSize": 20,
+                          "fontWeight": "600",
+                          "fill": {
+                            "type": "Color",
+                            "value": "#ffffff"
+                          },
+                          "centerX": {
+                            "type": "Percent",
+                            "value": 50
+                          },
+                          "centerY": {
+                            "type": "Percent",
+                            "value": 50
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "series-1": {
+              "type": "ColumnSeries",
+              "settings": {
+                "name": "Other rental assistance",
+                "xAxis": "#axis-0",
+                "yAxis": "#axis-1",
+                "valueXField": "other",
+                "categoryYField": "group",
+                "stacked": true,
+                "fill": {
+                  "type": "Color",
+                  "value": "#7f8a96"
+                },
+                "stroke": {
+                  "type": "Color",
+                  "value": "#ffffff"
+                },
+                "tooltip": {
+                  "type": "Tooltip",
+                  "settings": {
+                    "labelText": "{name}: {valueX.formatNumber('0.0')}%"
+                  }
+                }
+              },
+              "properties": {
+                "data": "#data-0",
+                "columns": {
+                  "properties": {
+                    "template": {
+                      "settings": {
+                        "height": {
+                          "type": "Percent",
+                          "value": 80
+                        },
+                        "strokeWidth": 2,
+                        "tooltipText": "{name}: {valueX.formatNumber('0.0')}%"
+                      }
+                    }
+                  }
+                },
+                "bullets": [
+                  {
+                    "type": "Bullet",
+                    "settings": {
+                      "locationX": 0.5,
+                      "sprite": {
+                        "type": "Label",
+                        "settings": {
+                          "text": "{valueX.formatNumber('0.0')}%",
+                          "populateText": true,
+                          "fontSize": 20,
+                          "fontWeight": "600",
+                          "fill": {
+                            "type": "Color",
+                            "value": "#ffffff"
+                          },
+                          "centerX": {
+                            "type": "Percent",
+                            "value": 50
+                          },
+                          "centerY": {
+                            "type": "Percent",
+                            "value": 50
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "series-2": {
+              "type": "ColumnSeries",
+              "settings": {
+                "name": "No rental assistance",
+                "xAxis": "#axis-0",
+                "yAxis": "#axis-1",
+                "valueXField": "none",
+                "categoryYField": "group",
+                "stacked": true,
+                "fill": {
+                  "type": "Color",
+                  "value": "#dfe3e8"
+                },
+                "stroke": {
+                  "type": "Color",
+                  "value": "#ffffff"
+                },
+                "tooltip": {
+                  "type": "Tooltip",
+                  "settings": {
+                    "labelText": "{name}: {valueX.formatNumber('0.0')}%"
+                  }
+                }
+              },
+              "properties": {
+                "data": "#data-0",
+                "columns": {
+                  "properties": {
+                    "template": {
+                      "settings": {
+                        "height": {
+                          "type": "Percent",
+                          "value": 80
+                        },
+                        "strokeWidth": 2,
+                        "tooltipText": "{name}: {valueX.formatNumber('0.0')}%"
+                      }
+                    }
+                  }
+                },
+                "bullets": [
+                  {
+                    "type": "Bullet",
+                    "settings": {
+                      "locationX": 0.5,
+                      "sprite": {
+                        "type": "Label",
+                        "settings": {
+                          "text": "{valueX.formatNumber('0.0')}%",
+                          "populateText": true,
+                          "fontSize": 20,
+                          "fontWeight": "600",
+                          "fill": {
+                            "type": "Color",
+                            "value": "#333333"
+                          },
+                          "centerX": {
+                            "type": "Percent",
+                            "value": 50
+                          },
+                          "centerY": {
+                            "type": "Percent",
+                            "value": 50
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      };
+
+      am5plugins_json.JsonParser.new(root)
+        .parse(config, { parent: root.container })
+        .catch(function (e) {
+          console.error("amCharts: the chart config failed to parse — nothing was rendered.", e);
+        });
+    });
+  </script>
+</body>
+</html>

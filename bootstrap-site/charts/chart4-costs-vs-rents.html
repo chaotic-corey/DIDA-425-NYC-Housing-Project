@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<!--
+  This chart was created with Chart Maker by amCharts
+  https://live.amcharts.com
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>chart4 costs vs rents</title>
+  <style>
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; background: #ffffff; }
+    #chartdiv { width: 100%; height: 100vh; }
+  </style>
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/plugins/json.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/plugins/exporting.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+</head>
+<body>
+  <div id="chartdiv"></div>
+  <script>
+    am5.ready(function () {
+      var root = am5.Root.new("chartdiv");
+      window.chartRoot = root;
+
+      root.setThemes([
+        am5themes_Animated.new(root)
+      ]);
+
+      var config = {
+        "type": "XYChart",
+        "settings": {
+          "paddingTop": 20,
+          "paddingBottom": 25,
+          "paddingRight": 25,
+          "panX": false,
+          "panY": false,
+          "wheelX": "none",
+          "wheelY": "none",
+          "layout": {
+            "type": "VerticalLayout"
+          },
+          "maxTooltipDistance": 0,
+          "cursor": {
+            "type": "XYCursor",
+            "settings": {
+              "xAxis": "#axis-0",
+              "behavior": "none"
+            }
+          },
+          "autoAppear": true,
+          "width": {
+            "type": "Percent",
+            "value": 100
+          },
+          "height": {
+            "type": "Percent",
+            "value": 100
+          }
+        },
+        "properties": {
+          "series": [
+            "#series-0",
+            "#series-1",
+            "#series-2"
+          ],
+          "xAxes": [
+            "#axis-0"
+          ],
+          "yAxes": [
+            "#axis-1"
+          ]
+        },
+        "children": [
+          {
+            "type": "Label",
+            "settings": {
+              "text": "Since 2017, operating costs have risen faster than stabilized rents every year",
+              "fontSize": 20,
+              "fontWeight": "600",
+              "x": {
+                "type": "Percent",
+                "value": 50
+              },
+              "centerX": {
+                "type": "Percent",
+                "value": 50
+              },
+              "paddingBottom": 4
+            },
+            "index": 0
+          },
+          {
+            "type": "Label",
+            "settings": {
+              "text": "Yearly % change: RGB cost index vs. RGB rent index, 2010–2026",
+              "fontSize": 14,
+              "fill": {
+                "type": "Color",
+                "value": "#555555"
+              },
+              "x": {
+                "type": "Percent",
+                "value": 50
+              },
+              "centerX": {
+                "type": "Percent",
+                "value": 50
+              },
+              "paddingBottom": 6
+            },
+            "index": 1
+          },
+          {
+            "type": "Legend",
+            "settings": {
+              "centerX": {
+                "type": "Percent",
+                "value": 50
+              },
+              "x": {
+                "type": "Percent",
+                "value": 50
+              },
+              "marginBottom": 10,
+              "background": {
+                "type": "RoundedRectangle"
+              }
+            },
+            "properties": {
+              "data": [
+                "#series-0",
+                "#series-1",
+                "#series-2"
+              ],
+              "valueLabels": {
+                "properties": {
+                  "template": {
+                    "settings": {
+                      "forceHidden": true
+                    }
+                  }
+                }
+              }
+            },
+            "index": 2
+          },
+          {
+            "type": "Label",
+            "settings": {
+              "text": "Source: NYC Rent Guidelines Board, Appendix U, 2026 Price Index of Operating Costs, and 2026 Income & Expense Study. Rents = RGB rent index (estimated actual change in stabilized rents).\nThe cost index tracks prices, not profit: building net operating income still rose 6.2% in 2024. The 2026 rent point is the freeze guideline, not a measured change.",
+              "fontSize": 11,
+              "fill": {
+                "type": "Color",
+                "value": "#666666"
+              },
+              "paddingTop": 10
+            }
+          }
+        ],
+        "refs": [
+          {
+            "data-0": [
+              {
+                "year": "2010",
+                "costs": 3.4,
+                "rents": 3.4
+              },
+              {
+                "year": "2011",
+                "costs": 6.1,
+                "rents": 4.5
+              },
+              {
+                "year": "2012",
+                "costs": 2.8,
+                "rents": 4
+              },
+              {
+                "year": "2013",
+                "costs": 5.9,
+                "rents": 4.6
+              },
+              {
+                "year": "2014",
+                "costs": 5.7,
+                "rents": 2.4
+              },
+              {
+                "year": "2015",
+                "costs": 0.5,
+                "rents": 1.6
+              },
+              {
+                "year": "2016",
+                "costs": -1.2,
+                "rents": 1.7
+              },
+              {
+                "year": "2017",
+                "costs": 6.2,
+                "rents": 2.3
+              },
+              {
+                "year": "2018",
+                "costs": 4.5,
+                "rents": 2.7
+              },
+              {
+                "year": "2019",
+                "costs": 5.5,
+                "rents": 1.9
+              },
+              {
+                "year": "2020",
+                "costs": 3.7,
+                "rents": 0.4
+              },
+              {
+                "year": "2021",
+                "costs": 3,
+                "rents": 1.9
+              },
+              {
+                "year": "2022",
+                "costs": 4.2,
+                "rents": 2.6
+              },
+              {
+                "year": "2023",
+                "costs": 8.1,
+                "rents": 2.1
+              },
+              {
+                "year": "2024",
+                "costs": 3.9,
+                "rents": 3.6
+              },
+              {
+                "year": "2025",
+                "costs": 6.3,
+                "rents": 2.6
+              },
+              {
+                "year": "2026",
+                "costs": 5.3,
+                "freeze": 0
+              }
+            ]
+          },
+          {
+            "axis-0": {
+              "type": "CategoryAxis",
+              "settings": {
+                "categoryField": "year",
+                "renderer": {
+                  "type": "AxisRendererX",
+                  "settings": {
+                    "minGridDistance": 40
+                  }
+                },
+                "tooltip": {
+                  "type": "Tooltip"
+                }
+              },
+              "properties": {
+                "data": "#data-0"
+              }
+            }
+          },
+          {
+            "axis-1": {
+              "type": "ValueAxis",
+              "settings": {
+                "renderer": {
+                  "type": "AxisRendererY",
+                  "settings": {
+                    "minGridDistance": 40
+                  }
+                },
+                "numberFormat": "0'%'",
+                "min": -2,
+                "max": 9,
+                "strictMinMax": true
+              }
+            }
+          },
+          {
+            "series-0": {
+              "type": "LineSeries",
+              "settings": {
+                "name": "Operating costs",
+                "xAxis": "#axis-0",
+                "yAxis": "#axis-1",
+                "valueYField": "costs",
+                "categoryXField": "year",
+                "fill": {
+                  "type": "Color",
+                  "value": "#1d2433"
+                },
+                "stroke": {
+                  "type": "Color",
+                  "value": "#1d2433"
+                },
+                "tooltip": {
+                  "type": "Tooltip",
+                  "settings": {
+                    "labelText": "{name}: {valueY.formatNumber('0.0')}%"
+                  }
+                },
+                "autoAppear": true
+              },
+              "properties": {
+                "data": "#data-0",
+                "strokes": {
+                  "properties": {
+                    "template": {
+                      "settings": {
+                        "strokeWidth": 2
+                      }
+                    }
+                  }
+                },
+                "bullets": [
+                  {
+                    "type": "Bullet",
+                    "settings": {
+                      "sprite": {
+                        "type": "Circle",
+                        "settings": {
+                          "radius": 4,
+                          "fill": "@series.get('fill')",
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#ffffff"
+                          },
+                          "strokeWidth": 1.5
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "series-1": {
+              "type": "LineSeries",
+              "settings": {
+                "name": "Stabilized rents",
+                "xAxis": "#axis-0",
+                "yAxis": "#axis-1",
+                "valueYField": "rents",
+                "categoryXField": "year",
+                "fill": {
+                  "type": "Color",
+                  "value": "#c0392b"
+                },
+                "stroke": {
+                  "type": "Color",
+                  "value": "#c0392b"
+                },
+                "tooltip": {
+                  "type": "Tooltip",
+                  "settings": {
+                    "labelText": "{name}: {valueY.formatNumber('0.0')}%"
+                  }
+                },
+                "autoAppear": true
+              },
+              "properties": {
+                "data": "#data-0",
+                "strokes": {
+                  "properties": {
+                    "template": {
+                      "settings": {
+                        "strokeWidth": 2
+                      }
+                    }
+                  }
+                },
+                "bullets": [
+                  {
+                    "type": "Bullet",
+                    "settings": {
+                      "sprite": {
+                        "type": "Circle",
+                        "settings": {
+                          "radius": 4,
+                          "fill": "@series.get('fill')",
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#ffffff"
+                          },
+                          "strokeWidth": 1.5
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "series-2": {
+              "type": "LineSeries",
+              "settings": {
+                "name": "2026 rent freeze (0% guideline)",
+                "xAxis": "#axis-0",
+                "yAxis": "#axis-1",
+                "valueYField": "freeze",
+                "categoryXField": "year",
+                "fill": {
+                  "type": "Color",
+                  "value": "#c0392b"
+                },
+                "stroke": {
+                  "type": "Color",
+                  "value": "#c0392b"
+                },
+                "tooltip": {
+                  "type": "Tooltip",
+                  "settings": {
+                    "labelText": "Rent freeze: 0% guideline for leases starting Oct. 1, 2026"
+                  }
+                },
+                "autoAppear": true
+              },
+              "properties": {
+                "data": "#data-0",
+                "strokes": {
+                  "properties": {
+                    "template": {
+                      "settings": {
+                        "strokeWidth": 2
+                      }
+                    }
+                  }
+                },
+                "bullets": [
+                  {
+                    "type": "Bullet",
+                    "settings": {
+                      "sprite": {
+                        "type": "Circle",
+                        "settings": {
+                          "radius": 7,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#ffffff"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#c0392b"
+                          },
+                          "strokeWidth": 2
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "Bullet",
+                    "settings": {
+                      "sprite": {
+                        "type": "Label",
+                        "settings": {
+                          "text": "Rents frozen: 0%",
+                          "fontSize": 13,
+                          "fontWeight": "600",
+                          "fill": {
+                            "type": "Color",
+                            "value": "#c0392b"
+                          },
+                          "centerX": {
+                            "type": "Percent",
+                            "value": 100
+                          },
+                          "centerY": {
+                            "type": "Percent",
+                            "value": 0
+                          },
+                          "dy": 10
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      };
+
+      am5plugins_json.JsonParser.new(root)
+        .parse(config, { parent: root.container })
+        .catch(function (e) {
+          console.error("amCharts: the chart config failed to parse — nothing was rendered.", e);
+        });
+    });
+  </script>
+</body>
+</html>

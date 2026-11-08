@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!--
+  This chart was created with Chart Maker by amCharts
+  https://live.amcharts.com
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>chart3 stabilized share by borough</title>
+  <style>
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; background: #ffffff; }
+    #chartdiv { width: 100%; height: 100vh; }
+  </style>
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/plugins/json.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/plugins/exporting.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+</head>
+<body>
+  <div id="chartdiv"></div>
+  <script>
+    am5.ready(function () {
+      var root = am5.Root.new("chartdiv");
+      window.chartRoot = root;
+
+      root.setThemes([
+        am5themes_Animated.new(root)
+      ]);
+
+      var config = {
+        "type": "XYChart",
+        "settings": {
+          "paddingTop": 20,
+          "paddingBottom": 25,
+          "paddingRight": 40,
+          "panX": false,
+          "panY": false,
+          "wheelX": "none",
+          "wheelY": "none",
+          "layout": {
+            "type": "VerticalLayout"
+          },
+          "autoAppear": true,
+          "width": {
+            "type": "Percent",
+            "value": 100
+          },
+          "height": {
+            "type": "Percent",
+            "value": 100
+          }
+        },
+        "properties": {
+          "series": [
+            "#series-0",
+            "#series-1"
+          ],
+          "xAxes": [
+            "#axis-0"
+          ],
+          "yAxes": [
+            "#axis-1"
+          ]
+        },
+        "children": [
+          {
+            "type": "Label",
+            "settings": {
+              "text": "Two-thirds of Bronx private renters are rent-stabilized",
+              "fontSize": 20,
+              "fontWeight": "600",
+              "x": {
+                "type": "Percent",
+                "value": 50
+              },
+              "centerX": {
+                "type": "Percent",
+                "value": 50
+              },
+              "paddingBottom": 4
+            },
+            "index": 0
+          },
+          {
+            "type": "Label",
+            "settings": {
+              "text": "Rent-stabilized share of private renters, by borough, 2023",
+              "fontSize": 14,
+              "fill": {
+                "type": "Color",
+                "value": "#555555"
+              },
+              "x": {
+                "type": "Percent",
+                "value": 50
+              },
+              "centerX": {
+                "type": "Percent",
+                "value": 50
+              },
+              "paddingBottom": 10
+            },
+            "index": 1
+          },
+          {
+            "type": "Label",
+            "settings": {
+              "text": "Source: Analysis of the 2023 NYC Housing and Vacancy Survey (weighted). Private renters = rent-stabilized plus market-rate; excludes public housing and rent control.\nStaten Island not shown: only 27 stabilized households were surveyed, too few for a reliable estimate.",
+              "fontSize": 11,
+              "fill": {
+                "type": "Color",
+                "value": "#666666"
+              },
+              "paddingTop": 10
+            }
+          }
+        ],
+        "refs": [
+          {
+            "data-0": [
+              {
+                "borough": "Bronx",
+                "bronx": 67.2,
+                "other": null,
+                "income": "$39,000"
+              },
+              {
+                "borough": "Brooklyn",
+                "bronx": null,
+                "other": 44.1,
+                "income": "$66,020"
+              },
+              {
+                "borough": "Manhattan",
+                "bronx": null,
+                "other": 43.7,
+                "income": "$76,000"
+              },
+              {
+                "borough": "Queens",
+                "bronx": null,
+                "other": 38.7,
+                "income": "$68,826"
+              }
+            ]
+          },
+          {
+            "axis-0": {
+              "type": "ValueAxis",
+              "settings": {
+                "renderer": {
+                  "type": "AxisRendererX",
+                  "settings": {
+                    "minGridDistance": 100
+                  }
+                },
+                "numberFormat": "0'%'",
+                "min": 0,
+                "max": 80,
+                "strictMinMax": true
+              }
+            }
+          },
+          {
+            "axis-1": {
+              "type": "CategoryAxis",
+              "settings": {
+                "categoryField": "borough",
+                "renderer": {
+                  "type": "AxisRendererY",
+                  "settings": {
+                    "inversed": true,
+                    "cellStartLocation": 0.1,
+                    "cellEndLocation": 0.9,
+                    "minGridDistance": 20
+                  }
+                }
+              },
+              "properties": {
+                "data": "#data-0"
+              }
+            }
+          },
+          {
+            "series-0": {
+              "type": "ColumnSeries",
+              "settings": {
+                "name": "Bronx",
+                "xAxis": "#axis-0",
+                "yAxis": "#axis-1",
+                "valueXField": "bronx",
+                "categoryYField": "borough",
+                "clustered": false,
+                "fill": {
+                  "type": "Color",
+                  "value": "#c0392b"
+                },
+                "stroke": {
+                  "type": "Color",
+                  "value": "#c0392b"
+                },
+                "tooltip": {
+                  "type": "Tooltip",
+                  "settings": {
+                    "labelText": "{categoryY}: {valueX.formatNumber('0.0')}% of private renters are rent-stabilized\nMedian stabilized income: {income}"
+                  }
+                },
+                "autoAppear": true
+              },
+              "properties": {
+                "data": "#data-0",
+                "columns": {
+                  "properties": {
+                    "template": {
+                      "settings": {
+                        "cornerRadiusTR": 3,
+                        "cornerRadiusBR": 3,
+                        "height": {
+                          "type": "Percent",
+                          "value": 70
+                        },
+                        "tooltipText": "{categoryY}: {valueX.formatNumber('0.0')}% of private renters are rent-stabilized\nMedian stabilized household income: {income}"
+                      }
+                    }
+                  }
+                },
+                "bullets": [
+                  {
+                    "type": "Bullet",
+                    "settings": {
+                      "locationX": 1,
+                      "sprite": {
+                        "type": "Label",
+                        "settings": {
+                          "text": "{valueX.formatNumber('0.0')}%",
+                          "centerY": {
+                            "type": "Percent",
+                            "value": 50
+                          },
+                          "populateText": true,
+                          "fontSize": 15,
+                          "fontWeight": "600",
+                          "paddingLeft": 6
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "series-1": {
+              "type": "ColumnSeries",
+              "settings": {
+                "name": "Other boroughs",
+                "xAxis": "#axis-0",
+                "yAxis": "#axis-1",
+                "valueXField": "other",
+                "categoryYField": "borough",
+                "clustered": false,
+                "fill": {
+                  "type": "Color",
+                  "value": "#7f8a96"
+                },
+                "stroke": {
+                  "type": "Color",
+                  "value": "#7f8a96"
+                },
+                "tooltip": {
+                  "type": "Tooltip",
+                  "settings": {
+                    "labelText": "{categoryY}: {valueX.formatNumber('0.0')}% of private renters are rent-stabilized\nMedian stabilized income: {income}"
+                  }
+                },
+                "autoAppear": true
+              },
+              "properties": {
+                "data": "#data-0",
+                "columns": {
+                  "properties": {
+                    "template": {
+                      "settings": {
+                        "cornerRadiusTR": 3,
+                        "cornerRadiusBR": 3,
+                        "height": {
+                          "type": "Percent",
+                          "value": 70
+                        },
+                        "tooltipText": "{categoryY}: {valueX.formatNumber('0.0')}% of private renters are rent-stabilized\nMedian stabilized household income: {income}"
+                      }
+                    }
+                  }
+                },
+                "bullets": [
+                  {
+                    "type": "Bullet",
+                    "settings": {
+                      "locationX": 1,
+                      "sprite": {
+                        "type": "Label",
+                        "settings": {
+                          "text": "{valueX.formatNumber('0.0')}%",
+                          "centerY": {
+                            "type": "Percent",
+                            "value": 50
+                          },
+                          "populateText": true,
+                          "fontSize": 15,
+                          "fontWeight": "600",
+                          "paddingLeft": 6
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      };
+
+      am5plugins_json.JsonParser.new(root)
+        .parse(config, { parent: root.container })
+        .catch(function (e) {
+          console.error("amCharts: the chart config failed to parse — nothing was rendered.", e);
+        });
+    });
+  </script>
+</body>
+</html>
