@@ -28,3 +28,23 @@
     color: var(--accent-color);
     border-color: var(--accent-color);
 }
+
+
+/* CHART FORMATTING */
+/* This should hopefully make the charts scrollable on smaller screens */
+
+/* container for charts */
+.chart-scroll {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* chart iframe */
+.chart-frame {
+    display: block;
+    width: 100%;
+    min-width: 800px;
+    height: 650px;
+    border: none;
+    background-color: white;
+}
