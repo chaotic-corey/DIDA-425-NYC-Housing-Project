@@ -1,6 +1,7 @@
 /* This will let us overide some of the css styliing from the original css file. */
 
 /* Accent color variable- only need to change this to change the other colors */
+/* I made this match the charts accent color, but we can always change it */ 
 :root {
     --accent-color: #C0392B;
 }
