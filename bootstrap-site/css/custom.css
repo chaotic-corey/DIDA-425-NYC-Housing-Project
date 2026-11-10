@@ -48,3 +48,258 @@
     border: none;
     background-color: white;
 }
+
+
+/* TIMELINE */
+/* Everything here is scoped to #timeline so it can't affect the rest of the page. */
+
+/* One color per event type. Change these to recolor the legend, tags and markers together. */
+#timeline {
+    --tl-fact: #2c3e50;
+    --tl-promise: #8a5a00;
+    --tl-legal: var(--accent-color);
+    --tl-upcoming: #5f6b76;
+    --tl-line: #ced4da;
+}
+
+#timeline .subhead {
+    margin-bottom: 2.5rem;
+}
+
+/* Key numbers bar */
+#timeline .stat-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem 1rem;
+    background-color: #000;
+    border-radius: 0.375rem;
+    text-align: center;
+}
+
+#timeline .stat-bar .num {
+    color: #fff;
+    font-family: "Varela Round", sans-serif;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+#timeline .stat-bar .lbl {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* "Is my lease frozen?" box */
+#timeline .lease-box {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-left: 0.25rem solid var(--accent-color);
+    border-radius: 0.375rem;
+}
+
+#timeline .lease-box h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+#timeline .lease-box ul {
+    margin-bottom: 0;
+    padding-left: 1.25rem;
+}
+
+#timeline .lease-box li + li {
+    margin-top: 0.5rem;
+}
+
+/* Legend and event tags share the same pill look */
+#timeline .legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+}
+
+#timeline .legend span,
+#timeline .event .tag {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+#timeline .legend .fact,
+#timeline .event.fact .tag { background-color: var(--tl-fact); }
+#timeline .legend .promise,
+#timeline .event.promise .tag { background-color: var(--tl-promise); }
+#timeline .legend .legal,
+#timeline .event.legal .tag { background-color: var(--tl-legal); }
+#timeline .legend .upcoming,
+#timeline .event.upcoming .tag { background-color: var(--tl-upcoming); }
+
+/* The vertical line */
+#timeline .timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+#timeline .timeline::before {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0;
+    left: 0.4375rem;
+    width: 2px;
+    background-color: var(--tl-line);
+}
+
+/* Year headings */
+#timeline .year {
+    position: relative;
+    margin: 2.5rem 0 1rem;
+    font-size: 1.5rem;
+}
+
+#timeline .year:first-child {
+    margin-top: 0;
+}
+
+#timeline .year::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -2rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: #000;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+/* Event cards */
+#timeline .event {
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 1rem 1.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-left: 0.25rem solid var(--tl-color);
+    border-radius: 0.375rem;
+}
+
+#timeline .event.fact { --tl-color: var(--tl-fact); }
+#timeline .event.promise { --tl-color: var(--tl-promise); }
+#timeline .event.legal { --tl-color: var(--tl-legal); }
+#timeline .event.upcoming { --tl-color: var(--tl-upcoming); border-style: dashed; border-left-style: solid; }
+
+/* The dot on the line next to each event */
+#timeline .event::before {
+    content: "";
+    position: absolute;
+    top: 1.25rem;
+    left: -1.8125rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    background-color: var(--tl-color);
+    border: 2px solid #f8f9fa;
+    border-radius: 50%;
+    box-sizing: content-box;
+}
+
+#timeline .event time {
+    margin-right: 0.5rem;
+    color: #495057;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+#timeline .event h3 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+#timeline .event p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+#timeline .event p:last-child {
+    margin-bottom: 0;
+}
+
+#timeline .event .source,
+#timeline .event .note {
+    color: #6c757d;
+    font-size: 0.8rem;
+}
+
+#timeline .event .note {
+    font-style: italic;
+}
+
+#timeline .event .source a {
+    color: #495057;
+}
+
+#timeline .event .source a:hover {
+    color: var(--accent-color);
+}
+
+/* Big moments (add the "major" class) */
+#timeline .event.major {
+    border-left-width: 0.5rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
+}
+
+#timeline .event.major h3 {
+    font-size: 1.3rem;
+}
+
+#timeline .event.major::before {
+    left: -1.9375rem;
+    width: 0.875rem;
+    height: 0.875rem;
+}
+
+#timeline .updated {
+    margin: 2rem 0 0;
+    color: #6c757d;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* Phones: two-by-two key numbers and a tighter line */
+@media (max-width: 575.98px) {
+    #timeline .stat-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #timeline .timeline {
+        padding-left: 1.5rem;
+    }
+
+    #timeline .timeline::before {
+        left: 0.1875rem;
+    }
+
+    #timeline .year::before {
+        left: -1.75rem;
+    }
+
+    #timeline .event::before {
+        left: -1.5625rem;
+    }
+
+    #timeline .event.major::before {
+        left: -1.6875rem;
+    }
+}
