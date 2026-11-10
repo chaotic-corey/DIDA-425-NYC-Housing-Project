@@ -31,7 +31,7 @@
 
 
 /* CHART FORMATTING */
-/* This should hopefully make the charts scrollable on smaller screens */
+/* This makes the charts scrollable on smaller screens. It works!! Yay!!! */
 
 /* container for charts */
 .chart-scroll {
