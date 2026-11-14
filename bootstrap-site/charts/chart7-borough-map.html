@@ -42,12 +42,7 @@
       root.container.set("layout", root.verticalLayout);
       root.container.setAll({ paddingTop: 20, paddingBottom: 20, paddingLeft: 20, paddingRight: 20 });
 
-      // Title and subtitle
-      root.container.children.push(am5.Label.new(root, {
-        text: "The freeze hits the Bronx hardest",
-        fontSize: 20, fontWeight: "600",
-        x: am5.p50, centerX: am5.p50, paddingBottom: 4
-      }));
+      // Subtitle (the title is the heading on the page)
       root.container.children.push(am5.Label.new(root, {
         text: "Share of private renters who are rent-stabilized, by borough, 2023",
         fontSize: 14, fill: am5.color(0x555555),
