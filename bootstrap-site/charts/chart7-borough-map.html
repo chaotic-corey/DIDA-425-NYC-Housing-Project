@@ -17,10 +17,11 @@
     // Share of private renters (rent-stabilized + market-rate) who are rent-stabilized, 2023 NYCHVS (weighted).
     // Staten Island has no value: only 27 stabilized households were surveyed.
     var boroughData = [
-      { id: "36005", name: "Bronx",         share: 67.2, income: "$39,000" },
-      { id: "36047", name: "Brooklyn",      share: 44.1, income: "$66,020" },
-      { id: "36061", name: "Manhattan",     share: 43.7, income: "$76,000" },
-      { id: "36081", name: "Queens",        share: 38.7, income: "$68,826" }
+      { id: "36005", name: "Bronx",         share: 67.2, tip: "67.2% of private renters are rent-stabilized\nMedian stabilized household income: $39,000" },
+      { id: "36047", name: "Brooklyn",      share: 44.1, tip: "44.1% of private renters are rent-stabilized\nMedian stabilized household income: $66,020" },
+      { id: "36061", name: "Manhattan",     share: 43.7, tip: "43.7% of private renters are rent-stabilized\nMedian stabilized household income: $76,000" },
+      { id: "36081", name: "Queens",        share: 38.7, tip: "38.7% of private renters are rent-stabilized\nMedian stabilized household income: $68,826" },
+      { id: "36085", name: "Staten Island", tip: "Too few stabilized households surveyed for a reliable estimate" }
     ];
 
     // Borough outlines (amCharts geodata, New York counties)
@@ -70,7 +71,7 @@
         fill: am5.color(0xd5d9de),
         stroke: am5.color(0xffffff),
         strokeWidth: 2,
-        tooltipText: "[bold]{name}[/]\nToo few stabilized households surveyed for a reliable estimate"
+        tooltipText: "[bold]{name}[/]\n{tip}"
       });
 
       // Darker red = larger share of renters who are rent-stabilized
@@ -83,15 +84,6 @@
       }]);
 
       polygons.data.setAll(boroughData);
-
-      // Tooltip for boroughs with data
-      polygons.mapPolygons.template.adapters.add("tooltipText", function (text, target) {
-        var d = target.dataItem && target.dataItem.dataContext;
-        if (d && d.share) {
-          return "[bold]{name}[/]\n{share}% of private renters are rent-stabilized\nMedian stabilized household income: {income}";
-        }
-        return text;
-      });
 
       // Borough labels
       var labels = chart.series.push(am5map.MapPointSeries.new(root, {}));
