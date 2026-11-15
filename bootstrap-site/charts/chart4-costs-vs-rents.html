@@ -132,7 +132,7 @@
           {
             "type": "Label",
             "settings": {
-              "text": "Source: NYC Rent Guidelines Board, Appendix U, 2026 Price Index of Operating Costs, and 2026 Income & Expense Study.\n Rents = RGB rent index (estimated actual change in stabilized rents).\nThe cost index tracks prices, not profit as building net operating income still rose 6.2% in 2024. The 2026 rent point is the\nfreeze guideline, not a measured change.",
+              "text": "Source: NYC Rent Guidelines Board, Appendix U, 2026 Price Index of Operating Costs, and 2026 Income & Expense Study. Rents = RGB rent index (estimated actual change in stabilized rents).\nThe cost index tracks prices, not profit: building net operating income still rose 6.2% in 2024. The 2026 rent point is the freeze guideline, not a measured change.",
               "fontSize": 11,
               "fill": {
                 "type": "Color",
@@ -475,11 +475,35 @@
         ]
       };
 
-      am5plugins_json.JsonParser.new(root)
-        .parse(config, { parent: root.container })
-        .catch(function (e) {
+    am5plugins_json.JsonParser.new(root)
+      .parse(config, { parent: root.container })
+      .then(function (chart) {
+
+          // Get the years
+          const yearAxis = chart.xAxes.getIndex(0);
+
+          // Highlight 2019 - 2024
+          const highlightRange = yearAxis.makeDataItem({
+              category: "2019",
+              endCategory: "2024"
+          });
+
+          yearAxis.createAxisRange(highlightRange);
+
+          // Set the background color, we can change this is we want
+          highlightRange.get("axisFill").setAll({
+              fill: am5.color(0xC0392B),
+              fillOpacity: 0.12,
+              visible: true
+          });
+
+          // Hide the extra grid lines
+          highlightRange.get("grid").set("visible", false);
+
+      })
+      .catch(function (e) {
           console.error("amCharts: the chart config failed to parse — nothing was rendered.", e);
-        });
+      });
     });
   </script>
 </body>
