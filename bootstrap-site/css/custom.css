@@ -17,6 +17,18 @@
     border-bottom-color: var(--accent-color);
 }
 
+/* Navbar icon spacing */
+#mainNav .nav-link i,
+#mainNav .nav-link svg {
+    margin-right: 10px;
+}
+
+/* Section heading icon spacing */
+h2 i,
+h2 svg {
+    margin-right: 12px;
+}
+
 /* Another accent section */
 /* Not sure if this'll end up being used since we're probably going to replace the project section, but just in case.. */
 .projects-section .featured-text {

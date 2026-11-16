@@ -9,7 +9,7 @@
     <title>NYC Rent freeze</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link
@@ -35,12 +35,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#background">Background</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#tenants">Tenants</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#landlords">Landlords</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#conclusion">Conclusion</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#glossary">Glossary</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#background"><i class="fas fa-book-open"></i>Background</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#timeline"><i class="fas fa-clock"></i>Timeline</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tenants"><i class="fas fa-users"></i>Tenants</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#landlords"><i class="fas fa-building"></i>Landlords</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#conclusion"><i class="fas fa-flag"></i>Conclusion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#glossary"><i class="fas fa-book"></i>Glossary</a></li>
                 </ul>
             </div>
         </div>
@@ -64,18 +64,23 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8">
-                    <h2 class="text-white mb-4">Background</h2>
+                    <h2 class="text-white mb-4"><i class="fas fa-book-open"></i>Background</h2>
                     <p class="text-white-50">
-                        In New York City, as rent and other living expenses increase, housing affordability starts to
-                        become a major issue. A way the city addresses this problem is through rent stabilization, used
-                        as a way to protect tenants from drastic rent increases. In that sense, the New York City Rent
-                        Guidelines Board decides on how much landlords would be able to raise their rent regarding
-                        rent-stabilized apartments.
-                        <br>In June of 2026, the RGB voted 7-1 to freeze rents, making rent increases 0% on one-year and
-                        two-year leases starting October 1, 2026, through September 30, 2027. This vote caused a debate
-                        between tenants and landlords. This brings to light the question of who benefits from this rent
-                        freeze and what the possible costs are.
-                        <br>Our interactive website
+                        In New York City, rising rent and living expenses have made housing affordability a growing
+                        concern for many residents. To address this issue, the city uses rent stabilization, a system
+                        that limits how much landlords can increase rent for certain apartments. The New York City Rent
+                        Guidelines Board (RGB) plays an important role in this process by determining the maximum annual
+                        rent increases for rent-stabilized apartments.
+                        <br>In 2026, the Rent Guidelines Board voted 7-1 to freeze rents for both one-year and two-year
+                        leases beginning between October 1, 2026, and September 30, 2027. This decision means that
+                        tenants with qualifying leases would not experience a rent increase during that period. While
+                        the freeze aims to provide financial relief for tenants struggling with housing costs, it has
+                        also raised concerns among landlords about their ability to cover rising operating and
+                        maintenance expenses.
+                        <br>The rent freeze has sparked an ongoing debate about balancing affordable housing with the
+                        financial responsibilities of property owners. Through our interactive website, we explore the
+                        history of rent regulation, examine the experiences of tenants and landlords, and use data to
+                        better understand the potential benefits and challenges of the 2026 rent freeze.
                     </p>
                 </div>
             </div>
@@ -89,7 +94,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row justify-content-center">
                 <div class="col-lg-9">
-                    <h2 class="text-center mb-4">Timeline</h2>
+                    <h2 class="text-center mb-4"><i class="fas fa-clock"></i>Timeline</h2>
                     <p class="subhead text-black-50 text-center">From the 2019 state rent law to the court fight over
                         the 2026 freeze. Each event is color-coded so you can tell what happened, what was promised,
                         what is in court, and what comes next.</p>
@@ -419,17 +424,19 @@
         </div>
     </section>
 
-        <!-- Tenants -->
-        <section class="projects-section bg-light" id="tenants">
-            <div class="container px-4 px-lg-5">
-                <div class="row justify-content-center mb-5">
-                    <div class="col-lg-9 text-center">
-                        <h2 class="mb-4">Tenants</h2>
-                        <p class="text-black-50">The graphs below highlight the experiences and challenges faced by tenants in New York City. We look at the differences between market-rate and rent-stabilized tenants specifically their age, economic status, living conditions, etc.</p>
-                    </div>
+    <!-- Tenants -->
+    <section class="projects-section bg-light" id="tenants">
+        <div class="container px-4 px-lg-5">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-9 text-center">
+                    <h2 class="mb-4"><i class="fas fa-users"></i>Tenants</h2>
+                    <p class="text-black-50">The graphs below highlight the experiences and challenges faced by tenants
+                        in New York City. We look at the differences between market-rate and rent-stabilized tenants
+                        specifically their age, economic status, living conditions, etc.</p>
                 </div>
-                <!-- I created these containers for our graphs to eventually go in, based on the charts we already have -->
-                <div class="row gx-4 gy-4">
+            </div>
+            <!-- I created these containers for our graphs to eventually go in, based on the charts we already have -->
+            <div class="row gx-4 gy-4">
 
                 <!-- Stabilized vs Market rate chart -->
                 <div class="col-12">
@@ -444,79 +451,71 @@
                     </div>
                 </div>
 
-                    <!-- Income dist. chart -->
-                    <div class="col-12">
-                        <div class="bg-white border rounded p-3 p-md-4">
-                            <h3 class="h5">1 in 4 rent-stabilized households earn under $25,000</h3>
-                            <div class="chart-scroll">
-                                <iframe
-                                    src="charts/chart2-income-distribution.html"
-                                    title="Household income distribution"
-                                    class="chart-frame"
-                                    loading="lazy">
-                                </iframe>
-                            </div>
+                <!-- Income dist. chart -->
+                <div class="col-12">
+                    <div class="bg-white border rounded p-3 p-md-4">
+                        <h3 class="h5">1 in 4 rent-stabilized households earn under $25,000</h3>
+                        <div class="chart-scroll">
+                            <iframe src="charts/chart2-income-distribution.html" title="Household income distribution"
+                                class="chart-frame" loading="lazy">
+                            </iframe>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Rent stabilization/borough chart -->
-                    <div class="col-12">
-                        <div class="bg-white border rounded p-3 p-md-4">
-                            <h3 class="h5">Two-thirds of Bronx private renters are rent-stabilized</h3>
-                            <div class="chart-scroll">
-                                <iframe
-                                    src="charts/chart3-borough-share.html"
-                                    title="Rent stabilization by borough"
-                                    class="chart-frame"
-                                    loading="lazy">
-                                </iframe>
-                            </div>
+                <!-- Rent stabilization/borough chart -->
+                <div class="col-12">
+                    <div class="bg-white border rounded p-3 p-md-4">
+                        <h3 class="h5">Two-thirds of Bronx private renters are rent-stabilized</h3>
+                        <div class="chart-scroll">
+                            <iframe src="charts/chart3-borough-share.html" title="Rent stabilization by borough"
+                                class="chart-frame" loading="lazy">
+                            </iframe>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Rental assitance chart -->
-                    <div class="col-12">
-                        <div class="bg-white border rounded p-3 p-md-4">
-                            <h3 class="h5">About 1 in 5 rent-stabilized households already get help paying rent</h3>
-                            <div class="chart-scroll">
-                                <iframe
-                                    src="charts/chart5-rent-assistance.html"
-                                    title="Rental assistance"
-                                    class="chart-frame"
-                                    loading="lazy">
-                                </iframe>
-                            </div>
+                <!-- Rental assitance chart -->
+                <div class="col-12">
+                    <div class="bg-white border rounded p-3 p-md-4">
+                        <h3 class="h5">About 1 in 5 rent-stabilized households already get help paying rent</h3>
+                        <div class="chart-scroll">
+                            <iframe src="charts/chart5-rent-assistance.html" title="Rental assistance"
+                                class="chart-frame" loading="lazy">
+                            </iframe>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
     <!-- Landlords -->
     <section class="projects-section bg-light" id="landlords">
         <div class="container px-4 px-lg-5">
             <div class="row justify-content-center mb-5">
                 <div class="col-lg-9 text-center">
-                    <h2 class="mb-4">Landlords</h2>
-                    <p class="text-black-50">The graphs below highlight the experiences and challenges faced by landlords in New York City. We look at the differences between their operating costs and stabilized rent income revenue specifically how stabilized units affect landlords income status.</p>
+                    <h2 class="mb-4"><i class="fas fa-building"></i>Landlords</h2>
+                    <p class="text-black-50">The graphs below highlight the experiences and challenges faced by
+                        landlords in New York City. We look at the differences between their operating costs and
+                        stabilized rent income revenue specifically how stabilized units affect landlords income status.
+                    </p>
                 </div>
             </div>
             <div class="row gx-4 gy-4">
 
-                    <!-- Operating costs chart -->
-                    <div class="col-12">
-                        <div class="bg-white border rounded p-3 p-md-4">
-                            <h3 class="h5">Since 2017, operating costs have risen faster than stabilized rents every year</h3>
-                            <div class="chart-scroll">
-                                <iframe
-                                    src="charts/chart4-costs-vs-rents.html"
-                                    title="Operating costs vs. rent"
-                                    class="chart-frame"
-                                    loading="lazy">
-                                </iframe>
-                            </div>
+                <!-- Operating costs chart -->
+                <div class="col-12">
+                    <div class="bg-white border rounded p-3 p-md-4">
+                        <h3 class="h5">Since 2017, operating costs have risen faster than stabilized rents every year
+                        </h3>
+                        <div class="chart-scroll">
+                            <iframe src="charts/chart4-costs-vs-rents.html" title="Operating costs vs. rent"
+                                class="chart-frame" loading="lazy">
+                            </iframe>
                         </div>
                     </div>
+                </div>
 
                 <!-- Operating income/building type chart -->
                 <div class="col-12">
@@ -539,7 +538,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 text-center">
-                    <h2 class="text-white mb-4">Conclusion</h2>
+                    <h2 class="text-white mb-4"><i class="fas fa-flag"></i>Conclusion</h2>
                     <p class="text-white-50 mb-0">
                         The New York City 2026 rent freeze shows the challenges that can arise from balancing housing
                         affordability and the financial costs of maintaining housing conditions. Our research has found
@@ -561,7 +560,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row justify-content-center">
                 <div class="col-lg-9">
-                    <h2 class="text-center text-white mb-5">Glossary</h2>
+                    <h2 class="text-center text-white mb-5"><i class="fas fa-book"></i>Glossary</h2>
                     <!-- Description list, gives us terms and definitions-->
                     <!-- Copy-paste to give us as many as we need-->
                     <dl>
