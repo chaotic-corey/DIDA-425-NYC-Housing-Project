@@ -137,9 +137,22 @@
                         <span class="upcoming">Upcoming</span>
                     </div>
 
-                    <div class="timeline">
+                </div>
+            </div>
+        </div>
 
-                        <h2 class="year">Background</h2>
+        <!-- Horizontal timeline - displays differently depending on size of screen -->
+        <div class="timeline-wide">
+            <p class="timeline-instructions text-center text-black-50">
+                <!-- These will show depending on the size of the screen, since I made it operate differently -->
+                <span class="timeline-hint-desktop">Scroll down to move through the timeline &rarr;</span>
+                <span class="timeline-hint-mobile">Swipe sideways to explore the timeline &rarr;</span>
+            </p>
+            <div class="timeline-viewport" aria-label="Rent freeze history, scroll to explore events">
+                <div class="timeline-track">
+
+                        <!-- Most of this is the same -->
+                        <h3 class="timeline-year">Background</h3>
 
                         <article class="event fact">
                             <time>1969</time><span class="tag">Fact</span>
@@ -171,7 +184,7 @@
                                     target="_blank" rel="noopener noreferrer">New York Daily News</a></p>
                         </article>
 
-                        <h2 class="year">2019</h2>
+                        <h3 class="timeline-year">2019</h3>
 
                         <article class="event fact major">
                             <time>June 14, 2019</time><span class="tag">Fact</span>
@@ -194,7 +207,7 @@
                                     target="_blank" rel="noopener noreferrer">Gothamist</a></p>
                         </article>
 
-                        <h2 class="year">2020–2021</h2>
+                        <h3 class="timeline-year">2020–2021</h3>
 
                         <article class="event fact">
                             <time>March 2020</time><span class="tag">Fact</span>
@@ -226,7 +239,7 @@
                                     target="_blank" rel="noopener noreferrer">The Real Deal</a></p>
                         </article>
 
-                        <h2 class="year">2022–2024</h2>
+                        <h3 class="timeline-year">2022–2024</h3>
 
                         <article class="event fact">
                             <time>2022 to 2024</time><span class="tag">Fact</span>
@@ -249,7 +262,7 @@
                                     target="_blank" rel="noopener noreferrer">NY1</a></p>
                         </article>
 
-                        <h2 class="year">2025</h2>
+                        <h3 class="timeline-year">2025</h3>
 
                         <article class="event fact major">
                             <time>June 24, 2025</time><span class="tag">Fact</span>
@@ -289,7 +302,7 @@
                                     target="_blank" rel="noopener noreferrer">NY1</a></p>
                         </article>
 
-                        <h2 class="year">2026</h2>
+                        <h3 class="timeline-year">2026</h3>
 
                         <article class="event fact major">
                             <time>February 18, 2026</time><span class="tag">Fact</span>
@@ -394,7 +407,7 @@
                                     target="_blank" rel="noopener noreferrer">NY1</a></p>
                         </article>
 
-                        <h2 class="year">What's next</h2>
+                        <h3 class="timeline-year">What's next</h3>
 
                         <article class="event upcoming major">
                             <time>By end of 2026</time><span class="tag">Upcoming</span>
@@ -416,8 +429,18 @@
                                     rel="noopener noreferrer">Rent Guidelines Board</a></p>
                         </article>
 
-                    </div>
+                </div><!-- End of the timeline-track -->
 
+                <!-- This will show a scrolling progress bar (see custom.css)-->
+                <div class="timeline-progress" aria-hidden="true">
+                    <span class="timeline-progress-bar"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container px-4 px-lg-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
                     <p class="updated">Timeline last updated October 17, 2026.</p>
                 </div>
             </div>
@@ -440,6 +463,7 @@
 
                 <!-- Stabilized vs Market rate chart -->
                 <div class="col-12">
+                    <p class="text-black-50">The people in rent-stabilized apartments are not like other New York renters. Compared with market-rate renters, they are older, lower-income and about twice as likely to have fallen behind on rent. Each row compares the two groups with the gray dot being the market-rate renters, the red dot is rent-stabilized renters, and the line between them being the gap.</p>
                     <div class="bg-white border rounded p-3 p-md-4">
                         <h3 class="h5">Rent-stabilized renters are older, lower-income, and more likely to fall behind
                             on rent</h3>
@@ -451,44 +475,53 @@
                     </div>
                 </div>
 
-                <!-- Income dist. chart -->
-                <div class="col-12">
-                    <div class="bg-white border rounded p-3 p-md-4">
-                        <h3 class="h5">1 in 4 rent-stabilized households earn under $25,000</h3>
-                        <div class="chart-scroll">
-                            <iframe src="charts/chart2-income-distribution.html" title="Household income distribution"
-                                class="chart-frame" loading="lazy">
-                            </iframe>
+                    <!-- Income dist. chart -->
+                    <div class="col-12">
+                        <div class="bg-white border rounded p-3 p-md-4">
+                            <h3 class="h5">1 in 4 rent-stabilized households earn under $25,000</h3>
+                            <div class="chart-scroll">
+                                <iframe
+                                    src="charts/chart2-income-distribution.html"
+                                    title="Household income distribution"
+                                    class="chart-frame"
+                                    loading="lazy">
+                                </iframe>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Rent stabilization/borough chart -->
-                <div class="col-12">
-                    <div class="bg-white border rounded p-3 p-md-4">
-                        <h3 class="h5">Two-thirds of Bronx private renters are rent-stabilized</h3>
-                        <div class="chart-scroll">
-                            <iframe src="charts/chart3-borough-share.html" title="Rent stabilization by borough"
-                                class="chart-frame" loading="lazy">
-                            </iframe>
+                    <!-- Rent stabilization/borough chart -->
+                    <div class="col-12">
+                        <div class="bg-white border rounded p-3 p-md-4">
+                            <h3 class="h5">Two-thirds of Bronx private renters are rent-stabilized</h3>
+                            <div class="chart-scroll">
+                                <iframe
+                                    src="charts/chart3-borough-share.html"
+                                    title="Rent stabilization by borough"
+                                    class="chart-frame"
+                                    loading="lazy">
+                                </iframe>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Rental assitance chart -->
-                <div class="col-12">
-                    <div class="bg-white border rounded p-3 p-md-4">
-                        <h3 class="h5">About 1 in 5 rent-stabilized households already get help paying rent</h3>
-                        <div class="chart-scroll">
-                            <iframe src="charts/chart5-rent-assistance.html" title="Rental assistance"
-                                class="chart-frame" loading="lazy">
-                            </iframe>
+                    <!-- Rental assitance chart -->
+                    <div class="col-12">
+                        <div class="bg-white border rounded p-3 p-md-4">
+                            <h3 class="h5">About 1 in 5 rent-stabilized households already get help paying rent</h3>
+                            <div class="chart-scroll">
+                                <iframe
+                                    src="charts/chart5-rent-assistance.html"
+                                    title="Rental assistance"
+                                    class="chart-frame"
+                                    loading="lazy">
+                                </iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Landlords -->
     <section class="projects-section bg-light" id="landlords">
@@ -504,21 +537,24 @@
             </div>
             <div class="row gx-4 gy-4">
 
-                <!-- Operating costs chart -->
-                <div class="col-12">
-                    <div class="bg-white border rounded p-3 p-md-4">
-                        <h3 class="h5">Since 2017, operating costs have risen faster than stabilized rents every year
-                        </h3>
-                        <div class="chart-scroll">
-                            <iframe src="charts/chart4-costs-vs-rents.html" title="Operating costs vs. rent"
-                                class="chart-frame" loading="lazy">
-                            </iframe>
+                    <!-- Operating costs chart -->
+                    <div class="col-12">
+                        <div class="bg-white border rounded p-3 p-md-4">
+                            <h3 class="h5">Since 2017, operating costs have risen faster than stabilized rents every year</h3>
+                            <div class="chart-scroll">
+                                <iframe
+                                    src="charts/chart4-costs-vs-rents.html"
+                                    title="Operating costs vs. rent"
+                                    class="chart-frame"
+                                    loading="lazy">
+                                </iframe>
+                            </div>
                         </div>
                     </div>
-                </div>
 
                 <!-- Operating income/building type chart -->
                 <div class="col-12">
+                    <p class="text-black-50">Landlord income after operating costs still rose 6.2% in 2024, but that average hides who is struggling. The more rent-stabilized apartments a building has, the less its income grew. Each bar down the chart is a building type with more stabilized units, and each one gained less.</p>
                     <div class="bg-white border rounded p-3 p-md-4">
                         <h3 class="h5">"The more stabilized the building, the smaller the gain"</h3>
                         <div class="chart-scroll">
@@ -676,6 +712,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <!-- GSAP scroll (horizontal timeline) -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="js/timeline.js"></script>
 </body>
 
 </html>

@@ -475,11 +475,35 @@
         ]
       };
 
-      am5plugins_json.JsonParser.new(root)
-        .parse(config, { parent: root.container })
-        .catch(function (e) {
+    am5plugins_json.JsonParser.new(root)
+      .parse(config, { parent: root.container })
+      .then(function (chart) {
+
+          // Get the years
+          const yearAxis = chart.xAxes.getIndex(0);
+
+          // Highlight 2019 - 2024
+          const highlightRange = yearAxis.makeDataItem({
+              category: "2019",
+              endCategory: "2024"
+          });
+
+          yearAxis.createAxisRange(highlightRange);
+
+          // Set the background color, we can change this is we want
+          highlightRange.get("axisFill").setAll({
+              fill: am5.color(0xC0392B),
+              fillOpacity: 0.12,
+              visible: true
+          });
+
+          // Hide the extra grid lines
+          highlightRange.get("grid").set("visible", false);
+
+      })
+      .catch(function (e) {
           console.error("amCharts: the chart config failed to parse — nothing was rendered.", e);
-        });
+      });
     });
   </script>
 </body>
