@@ -460,7 +460,19 @@
             </div>
             <!-- I created these containers for our graphs to eventually go in, based on the charts we already have -->
             <div class="row gx-4 gy-4">
-
+         <!-- Borough map -->
+                <div class="col-12">
+                    <h3 class="h5">Where the freeze lands</h3>
+                    <p class="text-black-50">The freeze covers about 1 million apartments, but they are not spread evenly. In the Bronx, two out of every three private renters live in a rent-stabilized apartment. Darker red means more of a borough's renters are covered. Hover over a borough to see the median income of its rent-stabilized households.</p>
+                    <div class="bg-white border rounded p-3 p-md-4">
+                        <h3 class="h5">The freeze hits the Bronx hardest</h3>
+                        <div class="chart-scroll">
+                            <iframe src="charts/chart7-borough-map.html"
+                                title="Map of NYC boroughs shaded by share of renters who are rent-stabilized" class="chart-frame" loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
                 <!-- Stabilized vs Market rate chart -->
                 <div class="col-12">
                     <p class="text-black-50">The people in rent-stabilized apartments are not like other New York renters. Compared with market-rate renters, they are older, lower-income and about twice as likely to have fallen behind on rent. Each row compares the two groups with the gray dot being the market-rate renters, the red dot is rent-stabilized renters, and the line between them being the gap.</p>
