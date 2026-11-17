@@ -490,6 +490,8 @@
 
           yearAxis.createAxisRange(highlightRange);
 
+          highlightRange.get("label").set("forceHidden", true);
+
           // Set the background color, we can change this is we want
           highlightRange.get("axisFill").setAll({
               fill: am5.color(0xC0392B),
