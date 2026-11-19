@@ -6,6 +6,11 @@
     --accent-color: #C0392B;
 }
 
+/* Font scaling */
+html {
+    font-size: 115%;
+}
+
 /* Active and hovered navbar links */
 #mainNav.navbar-shrink .nav-link.active,
 #mainNav.navbar-shrink .nav-link:hover {
